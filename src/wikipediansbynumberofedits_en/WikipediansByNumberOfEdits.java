@@ -46,6 +46,7 @@ public abstract class WikipediansByNumberOfEdits {
     private final Date dateStarted = new Date();
     private static final String LIMIT_PROPERTY_KEY = "limit";
     private int limit = 0;
+    private static int numberOfRevisionsToBeHandled = 28000;
 
     protected void execute(String[] args) {
 
@@ -67,6 +68,7 @@ public abstract class WikipediansByNumberOfEdits {
             limit = limit * -1;
             
             System.err.print(limit + " this is limit");
+            
             final File dumpFile = new File("Resources/"+args[0]);
             fileNameCheck(dumpFile);
             final File userGroupsFile = new File("Resources/"+args[1]);
@@ -86,12 +88,29 @@ public abstract class WikipediansByNumberOfEdits {
                 }
             }
             final DumpHandler dumpHandler = new DumpHandler();
-            dumpHandler.setIpAddressesAreToBeCounted(false);
+            dumpHandler.setIpAddressesAreToBeCounted(true);
             InputStream dumpInputStream = null;
             try {
                 dumpInputStream = new GZIPInputStream(new FileInputStream(dumpFile));
                 SAXParserFactory.newInstance().newSAXParser().parse(dumpInputStream, dumpHandler);
-            } finally {
+            } catch(SAXException e){
+                
+                if(e.getMessage().equals("Limit reached.")){
+                
+            
+            }else{
+            if (e.getCause() instanceof ParseException) {
+                System.err.println(e);
+            } else {
+                e.printStackTrace();
+            }
+            System.exit(1);
+            }
+                
+                
+        
+                
+            }finally {
                 if (dumpInputStream != null) {
                     try {
                         dumpInputStream.close();
@@ -122,13 +141,8 @@ public abstract class WikipediansByNumberOfEdits {
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
             System.exit(1);
-        } catch (SAXException e) {
-            if (e.getCause() instanceof ParseException) {
-                System.err.println(e);
-            } else {
-                e.printStackTrace();
-            }
-            System.exit(1);
+//        } catch (SAXException e) {
+//            
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(1);
@@ -277,7 +291,9 @@ public abstract class WikipediansByNumberOfEdits {
         private int userIdErrorCount = 0;
 
         public void endElement(String uri, String localName, String qName) throws SAXException {
+          
             final String name = elementStack.pop();
+           
             if (name.equals("namespace")) {
                 namespaces.add(namespace, ns);
                 ns = 0;
@@ -337,13 +353,18 @@ public abstract class WikipediansByNumberOfEdits {
                     if (user.getId() != userId) {
                         userIdErrorCount++;
                     }
-
+///check it out heree for the timestamp
                     if (timestampBeroreOrEquals(timestamp)) {
                         user.incrementEdits();
                         if (timestampIsInPeriod(timestamp)) {
                             user.incrementEditsInRecentDays();
+                            System.err.println(timestamp);
                         }
-                        if (namespaces.ns(pageTitle) == Namespaces.MAIN_NAMESPACE) {
+//                        else{
+//                            user = null;
+//                            return;
+//                        }
+                            if (namespaces.ns(pageTitle) == Namespaces.MAIN_NAMESPACE) {
                             user.incrementEditsMain();
                             if (timestampIsInPeriod(timestamp)) {
                                 user.incrementEditsMainInRecentDays();
@@ -391,9 +412,14 @@ public abstract class WikipediansByNumberOfEdits {
                 timestamp = null;
                 revisionCounter++;
                 final int LOG_INTERVAL = 10000;
+                
                 if (revisionCounter % LOG_INTERVAL == 0) {
-
+                    
                     System.err.println("Processed ^__^: " + revisionCounter);
+                }
+                
+                if (revisionCounter > numberOfRevisionsToBeHandled){
+                    throw new SAXException("Limit reached.");
                 }
             }
         }

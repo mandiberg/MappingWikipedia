@@ -21,6 +21,8 @@ class User {
 	private int editsMain = 0;
  
 	private int editsMainInRecentDays = 0;
+        
+        private boolean inPeriod = false;
  
 	public int getId() {
 		return id;
@@ -53,7 +55,13 @@ class User {
 	public int getEditsMainInRecentDays() {
 		return editsMainInRecentDays;
 	}
- 
+        
+        public boolean getInPeriod(){
+                return inPeriod;
+        }
+        public void setInPeriod(){
+            inPeriod = true;
+        }
 	public void incrementEdits(){
 		edits++;
 	}
