@@ -1,0 +1,7 @@
+*.gz
+*.txt
+*.sql
+*.log
+Outputs/
+Resources/
+Other/
