@@ -5,6 +5,10 @@
  */
 package wikipediansbynumberofedits_en;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -32,7 +36,7 @@ public class DataForD3 {
     public DataForD3(User[] users){ 
         this.users = users;
     }
-    private void getIpUserList(){
+    private void getIpUserListFromClass(){
         for (User user : users) {
            if(user.getId()<=3){
               ipUsers.add(user.getText());
@@ -40,10 +44,37 @@ public class DataForD3 {
            } 
         }
     }
-    public void output(){
+    private void getIpUserListFromFreq() throws IOException{
+        File folder = new File("Outputs/freq/");
+        File[] listOfFiles = folder.listFiles();
+//        System.err.println(listOfFiles);
+
+        for (File file : listOfFiles) {
+            if (file.isFile()) {
+                String fileName = file.getName();
+                if(!fileName.substring(0,1).equals(".")){
+                    System.err.println("File " + file.getName());
+                    BufferedReader reader = new BufferedReader(new FileReader("Outputs/freq/"+fileName)); 
+                    String line = reader.readLine();
+                    while(line != null) 
+                    { 
+                        ipUsers.add(line);
+//                        System.err.println(line);
+                        line = reader.readLine(); 
+
+                    }
+                    reader.close(); 
+                }
+            } else if (file.isDirectory()) {
+                System.err.println("Directory " + file.getName());
+            }
+        }
+    }
+    public void output() throws IOException{
         List<String> URLlist = new LinkedList<String>(); 
 //                        try{
-                        getIpUserList();
+                        getIpUserListFromFreq();
+//                        getIpUserListFromClass();
                         String[] ipUsersArray = ipUsers.toArray(new String[0]); 
                         String userChunks[][] = splitArray(ipUsersArray,32);
                         for (String[] userss : userChunks) {
