@@ -11,7 +11,6 @@ package wikipediansbynumberofedits_en;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
@@ -46,7 +45,8 @@ public abstract class WikipediansByNumberOfEdits {
     private final Date dateStarted = new Date();
     private static final String LIMIT_PROPERTY_KEY = "limit";
     private int limit = 0;
-    private static int numberOfRevisionsToBeHandled = 28000;
+    private static final boolean runLimited = true;
+    private static final int numberOfRevisionsToBeHandled = 500000;
 
     protected void execute(String[] args) {
 
@@ -131,6 +131,12 @@ public abstract class WikipediansByNumberOfEdits {
 //                    writer.println();
                 }
             }
+            /// put dataford3 stuff here
+                                  boolean allIPs = true;
+                        if(allIPs){
+                            DataForD3 d3= new DataForD3(dumpHandler.getUsers());
+                            d3.output();
+                        }
         } catch (NumberFormatException e) {
             System.err.println("The specified system property \"" + LIMIT_PROPERTY_KEY + "\" is not a valid integer.");
             System.err.println(e);
@@ -147,6 +153,7 @@ public abstract class WikipediansByNumberOfEdits {
             e.printStackTrace();
             System.exit(1);
         } finally {
+            
             final Date dateEnded = new Date();
             System.err.println("Ended. " + dateEnded);
             final SimpleDateFormat dateFormat = new SimpleDateFormat(TIME_FORMAT_STRING);
@@ -335,7 +342,7 @@ public abstract class WikipediansByNumberOfEdits {
                 if (ignoreRevision) {
                     return;
                 }
-                
+                FrequencyWriter freqWriter = null;
                 User user = null;
                 if (ipAddressesAreToBeCounted || userId != 0) {
                     user = map.get(userText);
@@ -357,8 +364,16 @@ public abstract class WikipediansByNumberOfEdits {
                     if (timestampBeroreOrEquals(timestamp)) {
                         user.incrementEdits();
                         if (timestampIsInPeriod(timestamp)) {
+                            if (userId<=3){
+                            freqWriter = new FrequencyWriter(timestamp, userText);
+                            try {
+                                freqWriter.usingBufferedWriter();
+                            } catch (IOException ex) {
+                                System.err.println(ex);
+                            }
+                            }
                             user.incrementEditsInRecentDays();
-                            System.err.println(timestamp);
+//                            System.err.println(timestamp);
                         }
 //                        else{
 //                            user = null;
@@ -418,7 +433,7 @@ public abstract class WikipediansByNumberOfEdits {
                     System.err.println("Processed ^__^: " + revisionCounter);
                 }
                 
-                if (revisionCounter > numberOfRevisionsToBeHandled){
+                if (runLimited&&(revisionCounter > numberOfRevisionsToBeHandled)){
                     throw new SAXException("Limit reached.");
                 }
             }

@@ -20,7 +20,7 @@ public class CSVReader {
     public Map<String, String> parse() {
 
         String csvFile = "Resources/statefips.csv";
-        String line = "";
+        String line;
         String cvsSplitBy = ",";
 
         try {
@@ -37,7 +37,7 @@ public class CSVReader {
                 
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println(e);
         }
         return locationInfo;
 

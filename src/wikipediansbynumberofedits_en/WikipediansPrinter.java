@@ -12,19 +12,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
  
 abstract class WikipediansPrinter {
  
 	private PrintWriter writer = null;
- 
+        
 	public PrintWriter getWriter() {
 		return writer;
 	}
@@ -99,10 +94,8 @@ abstract class WikipediansPrinter {
  
 	public void print(User[] users, UserGroups userGroups, int limit) {
                 try {
-                    Map<String, Integer> collectiveApiOutcome = new HashMap<String, Integer>();
-                    Map<String, Integer> collectiveApiOutcomeFIPS = new HashMap<String, Integer>();
+                    
 
-                    List<String> ipUsers = new ArrayList<String>();    
 //                    User[] ipUsers = {};
 			printHeader();
 			Arrays.sort(users, createComparator());
@@ -120,6 +113,10 @@ abstract class WikipediansPrinter {
                             if(user.getEdits()==0){
                                     break;
                                 }
+//                            if(user.getId()>3){
+//                                continue;
+//                            }
+     
 				final String group = getGroup(user, userGroups.group(user.getId()));
 				final String groupText = (group.equals("") ? "" : " (" + group + ")");
 				final String rankText;
@@ -161,6 +158,7 @@ abstract class WikipediansPrinter {
                                             } catch (IOException ioe) {
                                                 System.err.println("IOException: " + ioe.getMessage());
                                             }
+                                    
                                         }
 
                                         if (user.getId() <= 3) {//after it's put youcan go ahead and get the uniqueyboy
@@ -169,7 +167,6 @@ abstract class WikipediansPrinter {
                                                 FileWriter fw = new FileWriter(filename, true); //the true will append the new data
                                                 fw.write(user.getText() + ","+user.getEdits()+"\n");//appends the string to the file
                                                 fw.close();
-                                                ipUsers.add(user.getText());
 //                                                APIJSONParser apiReq = new APIJSONParser("http://maps.googleapis.com/maps/api/geocode/json?address=chicago&sensor=false&#8221");
 //                                                apiReq.getAPIandParseJSON();
                                       
@@ -186,44 +183,7 @@ abstract class WikipediansPrinter {
                                 
  
 			}
-                        ///here we are requesting JSON through API using IP chunks
-                        List<String> URLlist = new LinkedList<String>(); 
-                        
-                        String[] ipUsersArray = ipUsers.toArray(new String[0]); 
-                        String userChunks[][] = splitArray(ipUsersArray,32);
-                        for (String[] userss : userChunks) {
-                            String joinedChunk = String.join(",", userss);
-                            String chunkURL = "http://api.db-ip.com/v2/free/"+joinedChunk;
-                            URLlist.add(chunkURL);
-//                          System.err.println(chunkURL);
-//                          System.err.println("chunk end-------------------------------------------------------");
-                        }
-                        Map <String,Integer> temporaryData = new HashMap<String,Integer>();
-                        for (int i = 0; i < 2; i++) {
-    //			System.out.println(URLlist.get(i));
-                            APIJSONParser apiReq = new APIJSONParser(URLlist.get(i));
-                            temporaryData = apiReq.getAPIandParseJSON();
-                            for (Map.Entry<String, Integer> entry : temporaryData.entrySet()){
-                                int prev = 0;
-                                if (collectiveApiOutcome.get(entry.getKey()) != null){
-                                    prev = collectiveApiOutcome.get(entry.getKey());
-                                }
-                                collectiveApiOutcome.put(entry.getKey(),prev+entry.getValue());
-                            } 
-    //                        collectiveApiOutcome.putAll(temporaryData);       
-                        }
-//                        System.err.println(collectiveApiOutcome);
 
-                        CSVReader FIPSCodes = new CSVReader();
-                        DataForD3 d3Data = new DataForD3(collectiveApiOutcome,FIPSCodes.parse());
-                       
-                        collectiveApiOutcomeFIPS = d3Data.getFIPSCode();
-                        System.err.println(collectiveApiOutcomeFIPS);
-                        for (Map.Entry<String, Integer> entry : collectiveApiOutcomeFIPS.entrySet()){
-                            System.out.println(entry.getKey()+","+entry.getValue());
-                        }
-
-                        
                         
 //                        DataForD3 d3DataParser = new DataForD3(collectiveApiOutcome);
 //                        d3DataParser.numberOfIpsPerLocation();                      
