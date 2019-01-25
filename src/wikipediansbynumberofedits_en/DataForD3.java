@@ -7,7 +7,9 @@ package wikipediansbynumberofedits_en;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,7 +23,7 @@ import static wikipediansbynumberofedits_en.WikipediansPrinter.splitArray;
  * @author Danara
  */
 
-// d3.js WANTS THE DATA TO BE AS FOLLOWING --> STATE/RPOVINCE,NUMBER OF EDITS
+// d3.js WANTS THE DATA TO BE AS FOLLOWING --> STATE/PROVINCE,NUMBER OF EDITS
 
 public class DataForD3 {
 
@@ -30,75 +32,89 @@ public class DataForD3 {
     Map <String, Integer> finalData = new HashMap<String, Integer>();
     Map<String, Integer> collectiveApiOutcome = new HashMap<String, Integer>();
     Map<String, Integer> collectiveApiOutcomeFIPS = new HashMap<String, Integer>();
-    List<String> ipUsers = new ArrayList<String>();    
+    List<String> ipUsersText = new ArrayList<String>();    
     User[] users;
     
     public DataForD3(User[] users){ 
         this.users = users;
     }
-    private void getIpUserListFromClass(){
+    private void getUserTextArray(){
         for (User user : users) {
-           if(user.getId()<=3){
-              ipUsers.add(user.getText());
+              ipUsersText.add(user.getText());
  
-           } 
         }
     }
-    private void getIpUserListFromFreq() throws IOException{
-        File folder = new File("Outputs/freq/");
-        File[] listOfFiles = folder.listFiles();
-//        System.err.println(listOfFiles);
 
-        for (File file : listOfFiles) {
-            if (file.isFile()) {
-                String fileName = file.getName();
-                if(!fileName.substring(0,1).equals(".")){
-                    System.err.println("File " + file.getName());
-                    BufferedReader reader = new BufferedReader(new FileReader("Outputs/freq/"+fileName)); 
-                    String line = reader.readLine();
-                    while(line != null) 
-                    { 
-                        ipUsers.add(line);
-//                        System.err.println(line);
-                        line = reader.readLine(); 
-
-                    }
-                    reader.close(); 
-                }
-            } else if (file.isDirectory()) {
-                System.err.println("Directory " + file.getName());
-            }
-        }
-    }
     public void output() throws IOException{
         List<String> URLlist = new LinkedList<String>(); 
-//                        try{
-                        getIpUserListFromFreq();
-//                        getIpUserListFromClass();
-                        String[] ipUsersArray = ipUsers.toArray(new String[0]); 
+                        try{
+                        getUserTextArray();
+
+                        String[] ipUsersArray = ipUsersText.toArray(new String[0]);
                         String userChunks[][] = splitArray(ipUsersArray,32);
-                        for (String[] userss : userChunks) {
-                            
-                            String joinedChunk = String.join(",", userss);
-                            String chunkURL = "http://api.db-ip.com/v2/free/"+joinedChunk;
+                        System.err.println(userChunks[0][0]);
+                        for (String[] usersChunk : userChunks) {
+                            String joinedChunk = String.join(",", usersChunk);
+                            String chunkURL = "http://api.db-ip.com/v2/youAPIkey/"+joinedChunk;
                             URLlist.add(chunkURL);
-                          System.err.println(chunkURL);
-                          System.err.println("chunk end-------------------------------------------------------");
+                            try {
+                                String filename = "URL-list.txt";
+                                FileWriter fw = new FileWriter(filename, true); //the true will append the new data
+                                fw.write(chunkURL+"\n");//appends the string to the file
+                                fw.close();
+                            } catch (IOException ioe) {
+                                System.err.println("IOException: " + ioe.getMessage());
+                            }
+                            System.err.println(chunkURL);
+                            System.err.println("chunk end-------------------------------------------------------");
                         }
                         Map <String,Integer> temporaryData = new HashMap<String,Integer>();
-                        for (int i = 0; i < 2; i++) {
-//    			System.err.println(URLlist.get(i));
-                            APIJSONParser apiReq = new APIJSONParser(URLlist.get(i));
-                            temporaryData = apiReq.getAPIandParseJSON();
-                            for (Map.Entry<String, Integer> entry : temporaryData.entrySet()){
-                                int prev = 0;
-                                if (collectiveApiOutcome.get(entry.getKey()) != null){
-                                    prev = collectiveApiOutcome.get(entry.getKey());
-                                }
-                                collectiveApiOutcome.put(entry.getKey(),prev+entry.getValue());
-                            } 
-    //                        collectiveApiOutcome.putAll(temporaryData);       
+                        String line = null;
+
+                        try {
+                            // FileReader reads text files in the default encoding.
+                            FileReader fileReader = 
+                                new FileReader("URL-list.txt");
+
+                            // Always wrap FileReader in BufferedReader.
+                            BufferedReader bufferedReader = 
+                                new BufferedReader(fileReader);
+                            int lineNo = 0;
+                            while((line = bufferedReader.readLine()) != null&&lineNo<33000) {
+                                
+                                APIJSONParser apiReq = new APIJSONParser(line);
+                                temporaryData = apiReq.getAPIandParseJSON();
+                                for (Map.Entry<String, Integer> entry : temporaryData.entrySet()){
+                                    int prev = 0;
+                                    if (collectiveApiOutcome.get(entry.getKey()) != null){
+                                        prev = collectiveApiOutcome.get(entry.getKey());
+                                    }
+                                    collectiveApiOutcome.put(entry.getKey(),prev+entry.getValue());
+                                } 
+                                    System.out.println(line);
+                                    lineNo++;
+                            }   
+
+                            // Always close files.
+                            bufferedReader.close();         
                         }
+                        catch(FileNotFoundException ex) {
+                            System.out.println(
+                                "Unable to open file '" + 
+                                "URL-list.txt" + "'");                
+                        }
+                        catch(IOException ex) {
+                            System.out.println(
+                                "Error reading file '" 
+                                + "URL-list.txt" + "'");                  
+                            // Or we could just do this: 
+                            // ex.printStackTrace();
+                        }
+                        
+//    			System.err.println(URLlist.get(i));
+
+    //                        collectiveApiOutcome.putAll(temporaryData);       
+                       
 //                        System.err.println(collectiveApiOutcome);
 
                         CSVReader FIPSCodes = new CSVReader();
@@ -109,9 +125,9 @@ public class DataForD3 {
                         for (Map.Entry<String, Integer> entry : collectiveApiOutcomeFIPS.entrySet()){
                             System.out.println(entry.getKey()+","+entry.getValue());
                         }
-//                        }catch (Exception e){
-//                            System.err.println("lalalalala"+e);
-//                        }
+                        }catch (Exception e){
+                            System.err.println("lalalalala"+e);
+                        }
         
     }
     public Map<String, Integer> getFIPSCode(){

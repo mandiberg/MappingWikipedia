@@ -2,6 +2,7 @@
 *.txt
 *.sql
 *.log
+*.json
 Outputs/
 Resources/
 Other/

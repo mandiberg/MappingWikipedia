@@ -1,5 +1,12 @@
 package wikipediansbynumberofedits_en;
 
+/**
+ *
+ * @author Danara
+ */
+
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
@@ -36,6 +43,14 @@ class APIJSONParser
 //                }
 //        }
         private void getFreqFromJSON(JSONObject jobj){
+            try {
+                                String filename = "URL-jsons.json";
+                                FileWriter fw = new FileWriter(filename, true); //the true will append the new data
+                                fw.write(jobj+"\n");//appends the string to the file
+                                fw.close();
+                            } catch (IOException ioe) {
+                                System.err.println("IOException: " + ioe.getMessage());
+                            }
             for(Iterator iterator = jobj.keySet().iterator(); iterator.hasNext();) {
                     String state;
                     String countryCode;
@@ -84,8 +99,18 @@ class APIJSONParser
 
                 //Iterating condition to if response code is not 200 then throw a runtime exception
                 //else continue the actual process of getting the JSON data
-                if(responsecode != 200)
+                if(responsecode != 200){
+                     try {
+                                String filename = "URL-failed.txt";
+                                FileWriter fw = new FileWriter(filename, true); //the true will append the new data
+                                fw.write(APIurl+"\n");//appends the string to the file
+                                fw.close();
+                            } catch (IOException ioe) {
+                                System.err.println("IOException: " + ioe.getMessage());
+                            }
+                    System.err.println("This URL threw exception: "+APIurl);
                     throw new RuntimeException("HttpResponseCode: " +responsecode);
+                }
                 else
                 {
                     //Scanner functionality will read the JSON data from the stream
@@ -117,7 +142,8 @@ class APIJSONParser
 
             }
             catch(Exception e)
-            {
+            {       
+                    System.out.println("Parsing JSON from the following URL has failed: "+APIurl);
                     e.printStackTrace();
             }
             return freq;
