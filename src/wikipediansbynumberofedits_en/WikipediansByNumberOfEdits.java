@@ -28,6 +28,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 import java.util.TimeZone;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.zip.GZIPInputStream;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -46,6 +48,10 @@ public abstract class WikipediansByNumberOfEdits {
     private final Date dateStarted = new Date();
     private static final String LIMIT_PROPERTY_KEY = "limit";
     private int limit = 0;
+    private static final boolean runLimited = false;
+    private static final int numberOfRevisionsToBeHandled = 500000;
+    private static final int numberOfIpToGet = 1000000;
+    private static final boolean getLimitedIPs = true;
 
     protected void execute(String[] args) {
 
@@ -67,6 +73,7 @@ public abstract class WikipediansByNumberOfEdits {
             limit = limit * -1;
             
             System.err.print(limit + " this is limit");
+            
             final File dumpFile = new File("Resources/"+args[0]);
             fileNameCheck(dumpFile);
             final File userGroupsFile = new File("Resources/"+args[1]);
@@ -86,12 +93,35 @@ public abstract class WikipediansByNumberOfEdits {
                 }
             }
             final DumpHandler dumpHandler = new DumpHandler();
-            dumpHandler.setIpAddressesAreToBeCounted(false);
+            dumpHandler.setIpAddressesAreToBeCounted(true);
             InputStream dumpInputStream = null;
             try {
                 dumpInputStream = new GZIPInputStream(new FileInputStream(dumpFile));
                 SAXParserFactory.newInstance().newSAXParser().parse(dumpInputStream, dumpHandler);
-            } finally {
+            } catch(SAXException e){
+                
+                if(e.getMessage().equals("Limit reached.")){
+                
+            
+                }
+                else if(e.getMessage().equals("Got enough Ips.")){
+                    System.err.println(e.getMessage());
+                    
+            }
+            else{
+            if (e.getCause() instanceof ParseException) {
+                System.err.println(e);
+            } else {
+                e.printStackTrace();
+            }
+            System.exit(1);
+            }
+                
+                
+        
+            
+            }finally {
+                
                 if (dumpInputStream != null) {
                     try {
                         dumpInputStream.close();
@@ -100,18 +130,41 @@ public abstract class WikipediansByNumberOfEdits {
                     }
                 }
             }
-            final WikipediansPrinter[] printers = createPrinters();
-            for (WikipediansPrinter printer : printers) {
-                printer.setWriter(writer);
-                printer.setBeginTimestamp(dumpHandler.getBeginTimestamp());
-                printer.setEndTimestamp(dumpHandler.getEndTimestamp());
-                printer.setTotalEdits(dumpHandler.getRevisionCounter());
-                printer.setTotalEditsInPeriod(dumpHandler.getRevisionInPeriodCounter());
-                printer.print(dumpHandler.getUsers(), userGroups, limit);
-                if (!printer.equals(printers[printers.length - 1])) {
-//                    writer.println();
-                }
-            }
+//            final WikipediansPrinter[] printers = createPrinters();
+//            for (WikipediansPrinter printer : printers) {
+//                printer.setWriter(writer);
+//                printer.setBeginTimestamp(dumpHandler.getBeginTimestamp());
+//                printer.setEndTimestamp(dumpHandler.getEndTimestamp());
+//                printer.setTotalEdits(dumpHandler.getRevisionCounter());
+//                printer.setTotalEditsInPeriod(dumpHandler.getRevisionInPeriodCounter());
+//                printer.print(dumpHandler.getUsers(), userGroups, limit);
+//                if (!printer.equals(printers[printers.length - 1])) {
+////                    writer.println();
+//                }
+//            }
+                            System.err.println("ok gonna d3 stuff");
+
+            /// put dataford3 stuff here
+         try {
+                                String filename = "ipSSSS.txt";
+                                FileWriter fw = new FileWriter(filename, true); //the true will append the new data
+                                for (User ipUser: dumpHandler.getIpUsers()){
+                                fw.write(ipUser.getText() + " | "+ipUser.getEdits()+"\n");
+                                }
+                                fw.close();
+                            } catch (IOException ioe) {
+                                System.err.println("IOException: " + ioe.getMessage());
+                            }
+                    boolean allIPs = true;
+                    if(allIPs){
+                        System.err.println("ok doing d3 stuff");
+                        DataForD3 d3= new DataForD3(dumpHandler.getIpUsers());
+                                try {
+                                    d3.output();
+                                } catch (IOException ex) {
+                                    Logger.getLogger(WikipediansByNumberOfEdits.class.getName()).log(Level.SEVERE, null, ex);
+                                }
+                    }
         } catch (NumberFormatException e) {
             System.err.println("The specified system property \"" + LIMIT_PROPERTY_KEY + "\" is not a valid integer.");
             System.err.println(e);
@@ -122,17 +175,13 @@ public abstract class WikipediansByNumberOfEdits {
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
             System.exit(1);
-        } catch (SAXException e) {
-            if (e.getCause() instanceof ParseException) {
-                System.err.println(e);
-            } else {
-                e.printStackTrace();
-            }
-            System.exit(1);
+//        } catch (SAXException e) {
+//            
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(1);
         } finally {
+            
             final Date dateEnded = new Date();
             System.err.println("Ended. " + dateEnded);
             final SimpleDateFormat dateFormat = new SimpleDateFormat(TIME_FORMAT_STRING);
@@ -175,7 +224,7 @@ public abstract class WikipediansByNumberOfEdits {
         private final Stack<String> elementStack = new Stack<String>();
         private Date beginTimestamp = null;
         private Date endTimestamp = null;
-
+        
         public Date getBeginTimestamp() {
             return beginTimestamp;
         }
@@ -269,15 +318,25 @@ public abstract class WikipediansByNumberOfEdits {
         private String comment = "";
         private boolean ignoreRevision = false;
         private Map<String, User> map = new HashMap<String, User>();
+        private Map<String, User> mapIp = new HashMap<String, User>();
+
 
         public User[] getUsers() {
             return map.values().toArray(new User[map.size()]);
         }
+        public User[] getIpUsers(){
+            return mapIp.values().toArray(new User[mapIp.size()]);
+        }
+        public int getIpUsersCount(){
+            return mapIp.size();
+        }
         private int timestampParseExceptionCount = 0;
         private int userIdErrorCount = 0;
-
+        
         public void endElement(String uri, String localName, String qName) throws SAXException {
+          
             final String name = elementStack.pop();
+           
             if (name.equals("namespace")) {
                 namespaces.add(namespace, ns);
                 ns = 0;
@@ -319,13 +378,19 @@ public abstract class WikipediansByNumberOfEdits {
                 if (ignoreRevision) {
                     return;
                 }
-                
+                FrequencyWriter freqWriter = null;
                 User user = null;
                 if (ipAddressesAreToBeCounted || userId != 0) {
-                    user = map.get(userText);
+               
+///check it out heree for the timestamp
+                    if (timestampBeroreOrEquals(timestamp)) {
+                        if (timestampIsInPeriod(timestamp)) {
+                                 user = map.get(userText);
                     if (user == null) {
                         user = new User(userId, userText);
                         map.put(userText, user);
+                        user.incrementEdits();
+
 //                                                System.out.println("id " + userId + " text " + userText);
                         //userid > 3 is actual named users
                         //userid <3 is ip addresses and anons. sometimes weird ones that i don't know exactly what they are? like this user: Damian Yerrick
@@ -337,18 +402,30 @@ public abstract class WikipediansByNumberOfEdits {
                     if (user.getId() != userId) {
                         userIdErrorCount++;
                     }
+                            if (userId<=3){
+                                mapIp.put(userText,user);
 
-                    if (timestampBeroreOrEquals(timestamp)) {
-                        user.incrementEdits();
-                        if (timestampIsInPeriod(timestamp)) {
-                            user.incrementEditsInRecentDays();
-                        }
-                        if (namespaces.ns(pageTitle) == Namespaces.MAIN_NAMESPACE) {
+                                freqWriter = new FrequencyWriter(timestamp, userText);
+                                try {
+                                    freqWriter.usingBufferedWriter();
+                                } catch (IOException ex) {
+                                    System.err.println(ex);
+                                }
+                            }
+                               if (namespaces.ns(pageTitle) == Namespaces.MAIN_NAMESPACE) {
                             user.incrementEditsMain();
                             if (timestampIsInPeriod(timestamp)) {
                                 user.incrementEditsMainInRecentDays();
                             }
                         }
+                            user.incrementEditsInRecentDays();
+//                            System.err.println(timestamp);
+                        }
+//                        else{
+//                            user = null;
+//                            return;
+//                        }
+                         
                     }
 //                    if (userId > 3) {//after it's put youcan go ahead and get the uniqueyboy
 //                            try {
@@ -391,9 +468,20 @@ public abstract class WikipediansByNumberOfEdits {
                 timestamp = null;
                 revisionCounter++;
                 final int LOG_INTERVAL = 10000;
+                
                 if (revisionCounter % LOG_INTERVAL == 0) {
-
+                    
                     System.err.println("Processed ^__^: " + revisionCounter);
+                }
+                if (getIpUsersCount() % LOG_INTERVAL == 0){
+                    System.err.println("Ip Users Count ^__^: " + getIpUsersCount());
+                }
+                if (runLimited&&(revisionCounter > numberOfRevisionsToBeHandled)){
+                    throw new SAXException("Limit reached.");
+                }
+                if (getLimitedIPs&&(getIpUsersCount()>numberOfIpToGet)){
+                   
+                    throw new SAXException("Got enough Ips.");
                 }
             }
         }
