@@ -1,0 +1,20 @@
+update ipInfos
+inner join revision on ipinfos.ip_id = revision.rev_user_text
+set ip_2001 = CASE when revision.rev_timestamp REGEXP '2001.*' then 1 ELSE ip_2001 end,
+ip_2002 = CASE when revision.rev_timestamp REGEXP '2002.*' then 1 ELSE ip_2002 end,
+ip_2003 = CASE when revision.rev_timestamp REGEXP '2003.*' then 1 ELSE ip_2003 end,
+ip_2004 = CASE when revision.rev_timestamp REGEXP '2004.*' then 1 ELSE ip_2004 end,
+ip_2005 = CASE when revision.rev_timestamp REGEXP '2005.*' then 1 ELSE ip_2005 end,
+ip_2006 = CASE when revision.rev_timestamp REGEXP '2006.*' then 1 ELSE ip_2006 end,
+ip_2007 = CASE when revision.rev_timestamp REGEXP '2007.*' then 1 ELSE ip_2007 end,
+ip_2008 = CASE when revision.rev_timestamp REGEXP '2008.*' then 1 ELSE ip_2008 end,
+ip_2009 = CASE when revision.rev_timestamp REGEXP '2009.*' then 1 ELSE ip_2009 end,
+ip_2010 = CASE when revision.rev_timestamp REGEXP '2010.*' then 1 ELSE ip_2010 end,
+ip_2011 = CASE when revision.rev_timestamp REGEXP '2011.*' then 1 ELSE ip_2011 end,
+ip_2012 = CASE when revision.rev_timestamp REGEXP '2012.*' then 1 ELSE ip_2012 end,
+ip_2013 = CASE when revision.rev_timestamp REGEXP '2013.*' then 1 ELSE ip_2013 end,
+ip_2014 = CASE when revision.rev_timestamp REGEXP '2014.*' then 1 ELSE ip_2014 end,
+ip_2015 = CASE when revision.rev_timestamp REGEXP '2015.*' then 1 ELSE ip_2015 end,
+ip_2016 = CASE when revision.rev_timestamp REGEXP '2016.*' then 1 ELSE ip_2016 end,
+ip_2017 = CASE when revision.rev_timestamp REGEXP '2017.*' then 1 ELSE ip_2017 end,
+ip_2018 = CASE when revision.rev_timestamp REGEXP '2018.*' then 1 ELSE ip_2018 end;
