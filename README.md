@@ -6,18 +6,18 @@ This code can be used to extract all IPs and usernames from the Wikipedia revisi
 ##What is each file or in each folder
 
 
-├── build.xml // Netbeans project file
-├── build // Netbeans project folder
-├── dist // this is where the compiled jar file goes (and the dependencies: mysql connector and json-simple…
-├── Geoname // a python script and some sql queries to parse data as well as some output examples for working with Geoname
-├── lib // Netbeans project folder
-├── LICENSE //github file
-├── manifest.mf // Netbeans project file
-├── mysql-connector-java-8.0.15 //dependency library
-├── nbproject  // Netbeans project folder
-├── sql\ queries //most frequently used sql queries in parsing wiki data
-└── src //source code for Netbeans project
-
+* Mapping Wikipedia Data // a folder with the annual, and summary data for US and World.
+* Geoname // a python script and some sql queries to parse data as well as some output examples for working with Geoname
+* sql\ queries //most frequently used sql queries in parsing wiki data
+* Netbeans project files
+	* build.xml // Netbeans project file
+	* build // Netbeans project folder
+	* lib // Netbeans project folder
+	* manifest.mf // Netbeans project file
+	* nbproject  // Netbeans project folder
+	* src //source code for Netbeans project
+* mysql-connector-java-8.0.15 //dependency library
+* dist // this is where the compiled jar file goes (and the dependencies: mysql connector and json-simple
 
 ##Methodology Notes
 
