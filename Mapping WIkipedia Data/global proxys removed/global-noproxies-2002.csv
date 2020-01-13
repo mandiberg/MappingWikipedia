@@ -1,0 +1,107 @@
+countryName,countryCode,count
+"United Arab Emirates",AE,19
+Armenia,AM,1
+Argentina,AR,29
+Austria,AT,127
+Australia,AU,661
+"Bosnia and Herzegovina",BA,3
+Barbados,BB,3
+Belgium,BE,154
+Bulgaria,BG,9
+Bahrain,BH,1
+Brunei,BN,2
+Bolivia,BO,2
+Brazil,BR,126
+Canada,CA,1341
+Switzerland,CH,274
+"Cook Islands",CK,1
+Chile,CL,42
+China,CN,75
+Colombia,CO,6
+Cyprus,CY,2
+Czechia,CZ,69
+Germany,DE,661
+Denmark,DK,78
+Algeria,DZ,1
+Ecuador,EC,3
+Estonia,EE,14
+Egypt,EG,9
+Spain,ES,167
+Ethiopia,ET,1
+Finland,FI,91
+Fiji,FJ,1
+"Faroe Islands",FO,1
+France,FR,228
+"United Kingdom",GB,2226
+Gibraltar,GI,2
+Greece,GR,35
+Guatemala,GT,1
+Guam,GU,1
+"Hong Kong",HK,42
+Croatia,HR,14
+Hungary,HU,24
+Indonesia,ID,12
+Ireland,IE,90
+Israel,IL,69
+"Isle of Man",IM,13
+India,IN,163
+Iran,IR,11
+Italy,IT,317
+Jersey,JE,1
+Jordan,JO,1
+Japan,JP,72
+Kyrgyzstan,KG,2
+Cambodia,KH,1
+"South Korea",KR,42
+Kuwait,KW,1
+Kazakhstan,KZ,2
+Lebanon,LB,1
+"Sri Lanka",LK,2
+Lithuania,LT,6
+Luxembourg,LU,10
+Latvia,LV,10
+Moldova,MD,2
+"North Macedonia",MK,1
+Macao,MO,2
+Malta,MT,21
+Maldives,MV,1
+Mexico,MX,58
+Malaysia,MY,30
+Mozambique,MZ,1
+Nigeria,NG,1
+Netherlands,NL,294
+Norway,NO,72
+Nepal,NP,1
+"New Zealand",NZ,150
+Panama,PA,2
+Peru,PE,9
+Philippines,PH,35
+Pakistan,PK,9
+Poland,PL,96
+Portugal,PT,30
+Qatar,QA,3
+Reunion,RE,11
+Romania,RO,27
+Serbia,RS,9
+Russia,RU,32
+"Saudi Arabia",SA,9
+"Solomon Islands",SB,1
+Sweden,SE,347
+Singapore,SG,58
+Slovenia,SI,36
+Slovakia,SK,12
+"El Salvador",SV,1
+Syria,SY,1
+"Turks and Caicos Islands",TC,1
+Thailand,TH,7
+Turkey,TR,36
+Taiwan,TW,14
+Tanzania,TZ,2
+Ukraine,UA,12
+"United States",US,8397
+Uruguay,UY,2
+Venezuela,VE,7
+"British Virgin Islands",VG,2
+"U.S. Virgin Islands",VI,2
+Vietnam,VN,5
+"South Africa",ZA,24

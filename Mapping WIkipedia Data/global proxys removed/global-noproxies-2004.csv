@@ -1,0 +1,192 @@
+countryName,countryCode,count
+Andorra,AD,3
+"United Arab Emirates",AE,113
+Afghanistan,AF,3
+"Antigua and Barbuda",AG,2
+Anguilla,AI,4
+Albania,AL,35
+Armenia,AM,15
+Angola,AO,5
+Argentina,AR,805
+Austria,AT,1759
+Australia,AU,11781
+Aruba,AW,12
+"Aland Islands",AX,2
+Azerbaijan,AZ,9
+"Bosnia and Herzegovina",BA,99
+Barbados,BB,60
+Bangladesh,BD,48
+Belgium,BE,2442
+Bulgaria,BG,265
+Bahrain,BH,13
+Benin,BJ,3
+Bermuda,BM,18
+Brunei,BN,21
+Bolivia,BO,26
+Brazil,BR,2655
+Bahamas,BS,3
+Bhutan,BT,4
+Botswana,BW,3
+Belarus,BY,84
+Canada,CA,20715
+"Democratic Republic of the Congo",CD,1
+"Republic of the Congo",CG,2
+Switzerland,CH,2185
+Chile,CL,510
+Cameroon,CM,1
+China,CN,1946
+Colombia,CO,225
+"Costa Rica",CR,49
+Cuba,CU,14
+"Cabo Verde",CV,2
+Curacao,CW,9
+"Christmas Island",CX,1
+Cyprus,CY,293
+Czechia,CZ,630
+Germany,DE,21698
+Djibouti,DJ,3
+Denmark,DK,1304
+Algeria,DZ,2
+Ecuador,EC,28
+Estonia,EE,406
+Egypt,EG,235
+Eritrea,ER,2
+Spain,ES,2189
+Ethiopia,ET,19
+Finland,FI,2222
+Fiji,FJ,12
+"Falkland Islands",FK,3
+"Faroe Islands",FO,20
+France,FR,5078
+Gabon,GA,1
+"United Kingdom",GB,25856
+Grenada,GD,12
+Georgia,GE,53
+"French Guiana",GF,21
+Guernsey,GG,13
+Gibraltar,GI,14
+Greenland,GL,2
+Guadeloupe,GP,6
+Greece,GR,1106
+Guatemala,GT,29
+Guam,GU,17
+Guyana,GY,1
+"Hong Kong",HK,1789
+Honduras,HN,11
+Croatia,HR,651
+Haiti,HT,2
+Hungary,HU,730
+Indonesia,ID,415
+Ireland,IE,1919
+Israel,IL,2383
+"Isle of Man",IM,31
+India,IN,3592
+"British Indian Ocean Territory",IO,1
+Iraq,IQ,2
+Iran,IR,224
+Italy,IT,2538
+Jersey,JE,41
+Jamaica,JM,53
+Jordan,JO,43
+Japan,JP,3784
+Kenya,KE,28
+Kyrgyzstan,KG,7
+Cambodia,KH,9
+"Saint Kitts and Nevis",KN,1
+"South Korea",KR,814
+Kuwait,KW,277
+"Cayman Islands",KY,3
+Kazakhstan,KZ,48
+Laos,LA,21
+Lebanon,LB,30
+"Saint Lucia",LC,14
+Liechtenstein,LI,6
+"Sri Lanka",LK,117
+Lesotho,LS,2
+Lithuania,LT,434
+Luxembourg,LU,234
+Latvia,LV,156
+Libya,LY,21
+Monaco,MC,11
+Moldova,MD,41
+Montenegro,ME,29
+"North Macedonia",MK,104
+Myanmar,MM,11
+Mongolia,MN,25
+Macao,MO,14
+"Northern Mariana Islands",MP,8
+Martinique,MQ,3
+Malta,MT,106
+Mauritius,MU,29
+Maldives,MV,14
+Malawi,MW,1
+Mexico,MX,1067
+Malaysia,MY,1035
+Mozambique,MZ,3
+Namibia,NA,5
+"New Caledonia",NC,1
+Nigeria,NG,23
+Nicaragua,NI,3
+Netherlands,NL,4324
+Norway,NO,2845
+Nepal,NP,28
+Niue,NU,1
+"New Zealand",NZ,2390
+Oman,OM,27
+Panama,PA,48
+Peru,PE,357
+"French Polynesia",PF,3
+"Papua New Guinea",PG,6
+Philippines,PH,969
+Pakistan,PK,164
+Poland,PL,1579
+"Palestinian Territory",PS,140
+Portugal,PT,953
+Palau,PW,2
+Paraguay,PY,1
+Qatar,QA,8
+Reunion,RE,128
+Romania,RO,526
+Serbia,RS,350
+Russia,RU,976
+"Saudi Arabia",SA,73
+"Solomon Islands",SB,4
+Sudan,SD,3
+Sweden,SE,3355
+Singapore,SG,569
+Slovenia,SI,385
+Slovakia,SK,291
+Somalia,SO,1
+Suriname,SR,1
+"El Salvador",SV,29
+"Sint Maarten",SX,1
+Syria,SY,18
+Eswatini,SZ,1
+Chad,TD,1
+Thailand,TH,217
+Tajikistan,TJ,2
+"Timor Leste",TL,1
+Tunisia,TN,5
+Turkey,TR,632
+"Trinidad and Tobago",TT,81
+Tuvalu,TV,1
+Taiwan,TW,556
+Tanzania,TZ,8
+Ukraine,UA,157
+Uganda,UG,6
+"United States",US,145026
+Uruguay,UY,77
+Uzbekistan,UZ,10
+Vatican,VA,1
+"Saint Vincent and the Grenadines",VC,1
+Venezuela,VE,222
+"British Virgin Islands",VG,26
+"U.S. Virgin Islands",VI,13
+Vietnam,VN,84
+Vanuatu,VU,3
+Samoa,WS,2
+Kosovo,XK,7
+Yemen,YE,5
+"South Africa",ZA,223
+Zambia,ZM,7
+Zimbabwe,ZW,4

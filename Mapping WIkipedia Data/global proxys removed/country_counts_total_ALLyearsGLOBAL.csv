@@ -1,0 +1,226 @@
+countryName,countryCode,count
+Andorra,AD,737
+"United Arab Emirates",AE,115019
+Afghanistan,AF,4530
+"Antigua and Barbuda",AG,1823
+Anguilla,AI,454
+Albania,AL,10827
+Armenia,AM,10675
+Angola,AO,1630
+Argentina,AR,159675
+"American Samoa",AS,239
+Austria,AT,92429
+Australia,AU,1882537
+Aruba,AW,2940
+"Aland Islands",AX,38
+Azerbaijan,AZ,14815
+"Bosnia and Herzegovina",BA,39291
+Barbados,BB,6744
+Bangladesh,BD,51474
+Belgium,BE,189741
+Bulgaria,BG,61181
+Bahrain,BH,15466
+Burundi,BI,178
+Benin,BJ,535
+"Saint Barthelemy",BL,2
+Bermuda,BM,3815
+Brunei,BN,4960
+Bolivia,BO,7570
+"Bonaire, Saint Eustatius and Saba ",BQ,745
+Brazil,BR,509641
+Bahamas,BS,2470
+Bhutan,BT,1039
+Botswana,BW,2206
+Belarus,BY,16638
+Belize,BZ,2266
+Canada,CA,2382094
+"Democratic Republic of the Congo",CD,3898
+"Central African Republic",CF,29
+"Republic of the Congo",CG,119
+Switzerland,CH,140235
+"Cook Islands",CK,183
+Chile,CL,114463
+Cameroon,CM,4057
+China,CN,178851
+Colombia,CO,83287
+"Costa Rica",CR,17204
+Cuba,CU,552
+"Cabo Verde",CV,354
+Curacao,CW,2507
+"Christmas Island",CX,1
+Cyprus,CY,24093
+Czechia,CZ,62772
+Germany,DE,1135384
+Djibouti,DJ,400
+Denmark,DK,108800
+Dominica,DM,1402
+Algeria,DZ,14664
+Ecuador,EC,18662
+Estonia,EE,34176
+Egypt,EG,94141
+Eritrea,ER,84
+Spain,ES,376794
+Ethiopia,ET,4724
+Finland,FI,155134
+Fiji,FJ,4501
+"Falkland Islands",FK,1370
+Micronesia,FM,195
+"Faroe Islands",FO,1493
+France,FR,425770
+Gabon,GA,264
+"United Kingdom",GB,5598148
+Grenada,GD,2078
+Georgia,GE,12169
+"French Guiana",GF,451
+Guernsey,GG,2540
+Gibraltar,GI,3210
+Greenland,GL,456
+Guadeloupe,GP,1533
+"Equatorial Guinea",GQ,81
+Greece,GR,194338
+"South Georgia and the South Sandwich Islands",GS,1
+Guatemala,GT,11569
+Guam,GU,5449
+Guyana,GY,2352
+"Hong Kong",HK,162170
+Honduras,HN,7095
+Croatia,HR,120139
+Haiti,HT,1249
+Hungary,HU,103644
+Indonesia,ID,198000
+Ireland,IE,415631
+Israel,IL,202739
+"Isle of Man",IM,8066
+India,IN,2531585
+"British Indian Ocean Territory",IO,45
+Iraq,IQ,13265
+Iran,IR,108127
+Italy,IT,497759
+Jersey,JE,8415
+Jamaica,JM,23072
+Jordan,JO,24967
+Japan,JP,192173
+Kenya,KE,25578
+Kyrgyzstan,KG,2345
+Cambodia,KH,9531
+Kiribati,KI,101
+Comoros,KM,27
+"Saint Kitts and Nevis",KN,1276
+"North Korea",KP,12
+"South Korea",KR,116983
+Kuwait,KW,33481
+"Cayman Islands",KY,3143
+Kazakhstan,KZ,16146
+Laos,LA,2107
+Lebanon,LB,22725
+"Saint Lucia",LC,2525
+Liechtenstein,LI,383
+"Sri Lanka",LK,63694
+Lesotho,LS,782
+Lithuania,LT,32433
+Luxembourg,LU,14261
+Latvia,LV,25248
+Libya,LY,3971
+Monaco,MC,1761
+Moldova,MD,7057
+Montenegro,ME,10974
+"Saint Martin",MF,2
+Madagascar,MG,1074
+"Marshall Islands",MH,250
+"North Macedonia",MK,33197
+Myanmar,MM,8312
+Mongolia,MN,6066
+Macao,MO,3751
+"Northern Mariana Islands",MP,823
+Martinique,MQ,188
+Montserrat,MS,118
+Malta,MT,29964
+Mauritius,MU,18641
+Maldives,MV,7509
+Malawi,MW,1306
+Mexico,MX,267546
+Malaysia,MY,292216
+Mozambique,MZ,1651
+Namibia,NA,3894
+"New Caledonia",NC,536
+Niger,NE,193
+"Norfolk Island",NF,36
+Nigeria,NG,33606
+Nicaragua,NI,5863
+Netherlands,NL,320363
+Norway,NO,163930
+Nepal,NP,37365
+Nauru,NR,10
+Niue,NU,269
+"New Zealand",NZ,342292
+Oman,OM,18167
+Panama,PA,12071
+Peru,PE,74358
+"French Polynesia",PF,676
+"Papua New Guinea",PG,580
+Philippines,PH,395372
+Pakistan,PK,335041
+Poland,PL,226339
+"Saint Pierre and Miquelon",PM,88
+"Palestinian Territory",PS,6292
+Portugal,PT,148302
+Palau,PW,149
+Paraguay,PY,5567
+Qatar,QA,32471
+Reunion,RE,2204
+Romania,RO,133570
+Serbia,RS,122428
+Russia,RU,231257
+Rwanda,RW,1605
+"Saudi Arabia",SA,108634
+"Solomon Islands",SB,210
+Seychelles,SC,573
+Sudan,SD,12076
+Sweden,SE,272024
+Singapore,SG,153008
+Slovenia,SI,38015
+"Svalbard and Jan Mayen",SJ,277
+Slovakia,SK,34661
+"San Marino",SM,207
+Somalia,SO,1062
+Suriname,SR,1620
+"South Sudan",SS,251
+"Sao Tome and Principe",ST,159
+"El Salvador",SV,9170
+"Sint Maarten",SX,873
+Syria,SY,3409
+Eswatini,SZ,435
+"Turks and Caicos Islands",TC,669
+Chad,TD,47
+Thailand,TH,155295
+Tajikistan,TJ,543
+Tokelau,TK,6
+"Timor Leste",TL,313
+Turkmenistan,TM,293
+Tunisia,TN,14267
+Tonga,TO,212
+Turkey,TR,207079
+"Trinidad and Tobago",TT,21892
+Tuvalu,TV,9
+Taiwan,TW,82898
+Tanzania,TZ,8103
+Ukraine,UA,63716
+Uganda,UG,4780
+"United States",US,19083103
+Uruguay,UY,28449
+Uzbekistan,UZ,3391
+Vatican,VA,41
+"Saint Vincent and the Grenadines",VC,1426
+Venezuela,VE,41424
+"British Virgin Islands",VG,1248
+"U.S. Virgin Islands",VI,1420
+Vietnam,VN,84268
+Vanuatu,VU,397
+"Wallis and Futuna",WF,7
+Samoa,WS,236
+Kosovo,XK,3776
+Yemen,YE,2140
+Mayotte,YT,158
+"South Africa",ZA,118443
+Zambia,ZM,2157
+Zimbabwe,ZW,3934

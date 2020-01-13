@@ -1,0 +1,220 @@
+countryName,countryCode,count
+Andorra,AD,52
+"United Arab Emirates",AE,13987
+Afghanistan,AF,609
+"Antigua and Barbuda",AG,130
+Anguilla,AI,34
+Albania,AL,1566
+Armenia,AM,1090
+Angola,AO,94
+Argentina,AR,9517
+"American Samoa",AS,14
+Austria,AT,5831
+Australia,AU,117228
+Aruba,AW,144
+"Aland Islands",AX,4
+Azerbaijan,AZ,1454
+"Bosnia and Herzegovina",BA,3998
+Barbados,BB,414
+Bangladesh,BD,8968
+Belgium,BE,11107
+Bulgaria,BG,4120
+Bahrain,BH,1754
+Burundi,BI,42
+Benin,BJ,115
+Bermuda,BM,193
+Brunei,BN,670
+Bolivia,BO,536
+"Bonaire, Saint Eustatius and Saba ",BQ,51
+Brazil,BR,33338
+Bahamas,BS,191
+Bhutan,BT,114
+Botswana,BW,306
+Belarus,BY,1371
+Belize,BZ,279
+Canada,CA,131085
+"Democratic Republic of the Congo",CD,157
+"Central African Republic",CF,5
+"Republic of the Congo",CG,14
+Switzerland,CH,8793
+"Cook Islands",CK,13
+Chile,CL,7328
+Cameroon,CM,261
+China,CN,15216
+Colombia,CO,5183
+"Costa Rica",CR,1511
+Cuba,CU,48
+"Cabo Verde",CV,44
+Curacao,CW,146
+Cyprus,CY,1619
+Czechia,CZ,5235
+Germany,DE,53717
+Djibouti,DJ,44
+Denmark,DK,7445
+Dominica,DM,38
+Algeria,DZ,1842
+Ecuador,EC,1388
+Estonia,EE,2108
+Egypt,EG,6203
+Eritrea,ER,3
+Spain,ES,24211
+Ethiopia,ET,1366
+Finland,FI,8969
+Fiji,FJ,419
+"Falkland Islands",FK,17
+Micronesia,FM,17
+"Faroe Islands",FO,142
+France,FR,28071
+Gabon,GA,18
+"United Kingdom",GB,345591
+Grenada,GD,84
+Georgia,GE,1131
+"French Guiana",GF,18
+Guernsey,GG,199
+Gibraltar,GI,230
+Greenland,GL,35
+Guadeloupe,GP,68
+"Equatorial Guinea",GQ,7
+Greece,GR,16082
+Guatemala,GT,802
+Guam,GU,325
+Guyana,GY,335
+"Hong Kong",HK,10492
+Honduras,HN,674
+Croatia,HR,7055
+Haiti,HT,107
+Hungary,HU,5378
+Indonesia,ID,26074
+Ireland,IE,28484
+Israel,IL,11745
+"Isle of Man",IM,498
+India,IN,360641
+"British Indian Ocean Territory",IO,4
+Iraq,IQ,1906
+Iran,IR,10161
+Italy,IT,33024
+Jersey,JE,377
+Jamaica,JM,1866
+Jordan,JO,1690
+Japan,JP,12700
+Kenya,KE,4213
+Kyrgyzstan,KG,279
+Cambodia,KH,1597
+Kiribati,KI,6
+Comoros,KM,4
+"Saint Kitts and Nevis",KN,44
+"South Korea",KR,9175
+Kuwait,KW,3448
+"Cayman Islands",KY,159
+Kazakhstan,KZ,1597
+Laos,LA,286
+Lebanon,LB,2986
+"Saint Lucia",LC,157
+Liechtenstein,LI,27
+"Sri Lanka",LK,7427
+Lesotho,LS,140
+Lithuania,LT,2326
+Luxembourg,LU,1492
+Latvia,LV,1658
+Libya,LY,419
+Monaco,MC,59
+Moldova,MD,460
+Montenegro,ME,628
+"Saint Martin",MF,2
+Madagascar,MG,104
+"Marshall Islands",MH,129
+"North Macedonia",MK,2595
+Myanmar,MM,2457
+Mongolia,MN,653
+Macao,MO,267
+"Northern Mariana Islands",MP,27
+Martinique,MQ,10
+Montserrat,MS,3
+Malta,MT,1874
+Mauritius,MU,1330
+Maldives,MV,839
+Malawi,MW,221
+Mexico,MX,16017
+Malaysia,MY,27991
+Mozambique,MZ,260
+Namibia,NA,395
+"New Caledonia",NC,27
+Niger,NE,21
+"Norfolk Island",NF,1
+Nigeria,NG,4658
+Nicaragua,NI,508
+Netherlands,NL,22721
+Norway,NO,8002
+Nepal,NP,5843
+Nauru,NR,2
+Niue,NU,13
+"New Zealand",NZ,19191
+Oman,OM,1660
+Panama,PA,840
+Peru,PE,4646
+"French Polynesia",PF,49
+"Papua New Guinea",PG,100
+Philippines,PH,33937
+Pakistan,PK,28526
+Poland,PL,15189
+"Saint Pierre and Miquelon",PM,2
+"Palestinian Territory",PS,244
+Portugal,PT,7162
+Palau,PW,24
+Paraguay,PY,529
+Qatar,QA,2992
+Reunion,RE,81
+Romania,RO,10203
+Serbia,RS,8147
+Russia,RU,16328
+Rwanda,RW,320
+"Saudi Arabia",SA,9525
+"Solomon Islands",SB,14
+Seychelles,SC,50
+Sudan,SD,414
+Sweden,SE,14403
+Singapore,SG,15648
+Slovenia,SI,1937
+"Svalbard and Jan Mayen",SJ,78
+Slovakia,SK,2631
+"San Marino",SM,17
+Somalia,SO,278
+Suriname,SR,132
+"South Sudan",SS,69
+"Sao Tome and Principe",ST,19
+"El Salvador",SV,673
+"Sint Maarten",SX,48
+Syria,SY,575
+Eswatini,SZ,89
+"Turks and Caicos Islands",TC,73
+Chad,TD,10
+Thailand,TH,14112
+Tajikistan,TJ,107
+"Timor Leste",TL,37
+Turkmenistan,TM,88
+Tunisia,TN,1331
+Tonga,TO,19
+Turkey,TR,867
+"Trinidad and Tobago",TT,1374
+Tuvalu,TV,2
+Taiwan,TW,8329
+Tanzania,TZ,1335
+Ukraine,UA,4520
+Uganda,UG,1146
+"United States",US,1105478
+Uruguay,UY,1841
+Uzbekistan,UZ,338
+Vatican,VA,8
+"Saint Vincent and the Grenadines",VC,99
+Venezuela,VE,2775
+"British Virgin Islands",VG,31
+"U.S. Virgin Islands",VI,76
+Vietnam,VN,10685
+Vanuatu,VU,30
+Samoa,WS,28
+Kosovo,XK,439
+Yemen,YE,143
+Mayotte,YT,11
+"South Africa",ZA,16305
+Zambia,ZM,298
+Zimbabwe,ZW,789

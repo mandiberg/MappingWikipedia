@@ -1,0 +1,217 @@
+countryName,countryCode,count
+Andorra,AD,75
+"United Arab Emirates",AE,3218
+Afghanistan,AF,309
+"Antigua and Barbuda",AG,127
+Anguilla,AI,44
+Albania,AL,746
+Armenia,AM,818
+Angola,AO,88
+Argentina,AR,12074
+"American Samoa",AS,20
+Austria,AT,7373
+Australia,AU,167439
+Aruba,AW,207
+"Aland Islands",AX,7
+Azerbaijan,AZ,1150
+"Bosnia and Herzegovina",BA,2525
+Barbados,BB,676
+Bangladesh,BD,2380
+Belgium,BE,15105
+Bulgaria,BG,6217
+Bahrain,BH,573
+Burundi,BI,1
+Benin,BJ,26
+Bermuda,BM,372
+Brunei,BN,364
+Bolivia,BO,658
+"Bonaire, Saint Eustatius and Saba ",BQ,73
+Brazil,BR,39635
+Bahamas,BS,220
+Bhutan,BT,88
+Botswana,BW,183
+Belarus,BY,1007
+Belize,BZ,227
+Canada,CA,241664
+"Democratic Republic of the Congo",CD,292
+"Central African Republic",CF,1
+"Republic of the Congo",CG,1
+Switzerland,CH,10859
+"Cook Islands",CK,15
+Chile,CL,9704
+Cameroon,CM,307
+China,CN,12965
+Colombia,CO,7096
+"Costa Rica",CR,1423
+Cuba,CU,58
+"Cabo Verde",CV,28
+Curacao,CW,187
+Cyprus,CY,2108
+Czechia,CZ,5719
+Germany,DE,83443
+Djibouti,DJ,23
+Denmark,DK,9964
+Dominica,DM,214
+Algeria,DZ,868
+Ecuador,EC,1653
+Estonia,EE,2680
+Egypt,EG,8529
+Eritrea,ER,9
+Spain,ES,30711
+Ethiopia,ET,259
+Finland,FI,12401
+Fiji,FJ,438
+"Falkland Islands",FK,113
+Micronesia,FM,15
+"Faroe Islands",FO,203
+France,FR,33134
+Gabon,GA,10
+"United Kingdom",GB,555824
+Grenada,GD,164
+Georgia,GE,1059
+"French Guiana",GF,21
+Guernsey,GG,283
+Gibraltar,GI,291
+Greenland,GL,37
+Guadeloupe,GP,165
+"Equatorial Guinea",GQ,8
+Greece,GR,14338
+Guatemala,GT,1033
+Guam,GU,548
+Guyana,GY,157
+"Hong Kong",HK,12736
+Honduras,HN,626
+Croatia,HR,8753
+Haiti,HT,72
+Hungary,HU,10030
+Indonesia,ID,12570
+Ireland,IE,47236
+Israel,IL,16876
+"Isle of Man",IM,772
+India,IN,182939
+"British Indian Ocean Territory",IO,1
+Iraq,IQ,694
+Iran,IR,7356
+Italy,IT,38785
+Jersey,JE,766
+Jamaica,JM,2140
+Jordan,JO,2551
+Japan,JP,14038
+Kenya,KE,1283
+Kyrgyzstan,KG,114
+Cambodia,KH,466
+Kiribati,KI,8
+Comoros,KM,1
+"Saint Kitts and Nevis",KN,134
+"North Korea",KP,1
+"South Korea",KR,8618
+Kuwait,KW,2758
+"Cayman Islands",KY,276
+Kazakhstan,KZ,945
+Laos,LA,97
+Lebanon,LB,1730
+"Saint Lucia",LC,226
+Liechtenstein,LI,34
+"Sri Lanka",LK,4947
+Lesotho,LS,53
+Lithuania,LT,2397
+Luxembourg,LU,992
+Latvia,LV,2764
+Libya,LY,438
+Monaco,MC,150
+Moldova,MD,614
+Montenegro,ME,885
+Madagascar,MG,55
+"Marshall Islands",MH,6
+"North Macedonia",MK,2625
+Myanmar,MM,90
+Mongolia,MN,437
+Macao,MO,250
+"Northern Mariana Islands",MP,87
+Martinique,MQ,14
+Montserrat,MS,22
+Malta,MT,2878
+Mauritius,MU,1439
+Maldives,MV,656
+Malawi,MW,40
+Mexico,MX,23247
+Malaysia,MY,19936
+Mozambique,MZ,98
+Namibia,NA,218
+"New Caledonia",NC,30
+Niger,NE,10
+"Norfolk Island",NF,5
+Nigeria,NG,2154
+Nicaragua,NI,335
+Netherlands,NL,32757
+Norway,NO,14776
+Nepal,NP,1813
+Nauru,NR,1
+Niue,NU,8
+"New Zealand",NZ,33778
+Oman,OM,1215
+Panama,PA,931
+Peru,PE,6081
+"French Polynesia",PF,61
+"Papua New Guinea",PG,28
+Philippines,PH,33976
+Pakistan,PK,28893
+Poland,PL,18951
+"Saint Pierre and Miquelon",PM,3
+"Palestinian Territory",PS,431
+Portugal,PT,12436
+Palau,PW,17
+Paraguay,PY,568
+Qatar,QA,3284
+Reunion,RE,121
+Romania,RO,12532
+Serbia,RS,10322
+Russia,RU,23090
+Rwanda,RW,91
+"Saudi Arabia",SA,9175
+"Solomon Islands",SB,26
+Seychelles,SC,31
+Sudan,SD,1084
+Sweden,SE,24698
+Singapore,SG,13335
+Slovenia,SI,3183
+Slovakia,SK,2915
+"San Marino",SM,12
+Somalia,SO,50
+Suriname,SR,113
+"El Salvador",SV,691
+"Sint Maarten",SX,96
+Syria,SY,180
+Eswatini,SZ,12
+"Turks and Caicos Islands",TC,66
+Chad,TD,4
+Thailand,TH,11378
+Tajikistan,TJ,33
+"Timor Leste",TL,7
+Turkmenistan,TM,9
+Tunisia,TN,894
+Tonga,TO,25
+Turkey,TR,20478
+"Trinidad and Tobago",TT,2070
+Taiwan,TW,5362
+Tanzania,TZ,365
+Ukraine,UA,5726
+Uganda,UG,234
+"United States",US,1738239
+Uruguay,UY,2183
+Uzbekistan,UZ,201
+Vatican,VA,4
+"Saint Vincent and the Grenadines",VC,101
+Venezuela,VE,2906
+"British Virgin Islands",VG,127
+"U.S. Virgin Islands",VI,145
+Vietnam,VN,5099
+Vanuatu,VU,33
+"Wallis and Futuna",WF,1
+Samoa,WS,18
+Kosovo,XK,188
+Yemen,YE,238
+Mayotte,YT,15
+"South Africa",ZA,7850
+Zambia,ZM,59
+Zimbabwe,ZW,147
