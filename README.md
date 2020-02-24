@@ -1,7 +1,7 @@
 Mapping Wikipedia
 ==============
 
-This code can be used to extract all IPs and usernames from the Wikipedia revision history (stub-meta-history), geolocate them with www.DP-IP.com, and prepare them for visualization with D3.js. This code was used to produce the graphs in an article published in The Atlantic: https://www.theatlantic.com/technology/archive/2020/02/where-wikipedias-editors-are-where-they-arent-and-why/605023/
+This code can be used to extract all IPs and usernames from the Wikipedia revision history (stub-meta-history), geolocate them with www.DB-IP.com, and prepare them for visualization with D3.js. This code was used to produce the graphs in an article published in The Atlantic: https://www.theatlantic.com/technology/archive/2020/02/where-wikipedias-editors-are-where-they-arent-and-why/605023/
 
 ## What is each file or in each folder
 
