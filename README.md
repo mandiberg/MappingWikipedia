@@ -1,7 +1,7 @@
 Mapping Wikipedia
 ==============
 
-This code can be used to extract all IPs and usernames from the Wikipedia revision history (stub-meta-history), geolocate them with www.DP-IP.com, and prepare them for visualization with D3.js. This code was used to produce the graphs in an article published in The Atlantic. Link TK.
+This code can be used to extract all IPs and usernames from the Wikipedia revision history (stub-meta-history), geolocate them with www.DP-IP.com, and prepare them for visualization with D3.js. This code was used to produce the graphs in an article published in The Atlantic: https://www.theatlantic.com/technology/archive/2020/02/where-wikipedias-editors-are-where-they-arent-and-why/605023/
 
 ## What is each file or in each folder
 
@@ -21,9 +21,9 @@ This code can be used to extract all IPs and usernames from the Wikipedia revisi
 
 ## Methodology Notes
 
-When I was making Print Wikipedia, I discovered a shadow dataset of time-stamped IP addresses. I was actually trying to make a list of the contibutors, for the Contributor Appendix, and discovered that there were a lot less username editors than the official numbers stated, and a lot more IPs. At the time of the data I worked with (March 1st 2019) there were 884 million edits to English Wikipedia, made by 41M IP addresses, and TKM username editors. I chose to only count users that had made edits to articles. 
+When I was making Print Wikipedia, I discovered a shadow dataset of time-stamped IP addresses. I was actually trying to make a list of the contibutors, for the Contributor Appendix, and discovered that there were a lot less username editors than the official numbers stated, and a lot more IPs. At the time of the data I worked with (March 1st 2019) there were 884 million edits to English Wikipedia, made by 41M IP addresses, and 8.6 milion username editors. I chose to only count users that had made edits to articles. 
 
-TKM usernames is about 1/3 of the total number of the 35.7 million "users who have registered a username" noted in Wikipedia’s official statistics. This number is somewhat perplexing, given that it doesn’t conform to the 1% rule, and you don’t actually need an account to edit.  
+8.6 million usernames is about 1/3 of the total number of the 35.7 million "users who have registered a username" noted in Wikipedia’s official statistics. This number is somewhat perplexing, given that it doesn’t conform to the 1% rule, and you don’t actually need an account to edit.  
 
 Most of the IP editors represented in these maps only made a small number of edits. A very small percentage are active editors who edit without usernames, and do not login (in over a decade editing Wikipedia I have only encountered maybe a dozen of these active IP editors). And most importantly for this effort, this data includes active editors who usually login under their usernames but who have, on occasion, forgotten to log in while editing, leaving behind a trace of their location in Wikipedia’s edit logs. This is a significant assumption I have made, but I think it is a safe one. The IP data likely contains the big head of the username editor population, but not the long tail; the long tail likely matches the patterns in the IP editor data.
 
